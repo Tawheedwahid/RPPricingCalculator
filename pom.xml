@@ -44,5 +44,47 @@
 
     </dependencies>
 
+    <build>
+        <plugins>
+            <!-- maven-assembly-plugin to package the project as a JAR with dependencies -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <!-- Create a JAR file with dependencies included -->
+                    <archive>
+                        <manifest>
+                            <!-- Define the Main Class for executable JAR -->
+                            <mainClass>org.pricingcalculator.ApiApplication</mainClass> <!-- Change this to your main class -->
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef> <!-- Bundle dependencies into the JAR -->
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase> <!-- Bind to the package phase -->
+                        <goals>
+                            <goal>single</goal> <!-- Create a single JAR with dependencies -->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Optionally, you can also use maven-jar-plugin to package the basic JAR -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version> <!-- You can use a newer version if needed -->
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>
