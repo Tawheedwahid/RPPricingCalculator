@@ -19,4 +19,4 @@ COPY target/RPPricingCalculator-1.0-SNAPSHOT-jar-with-dependencies.jar /app/RPPr
 EXPOSE 8080
 
 # Run the Spring Boot app
-CMD ["java", "-jar", "/app/RPPricingCalculator-1.0-SNAPSHOT-jar-with-dependencies.jar"]
+CMD ["java", "-jar", "/target/RPPricingCalculator-1.0-SNAPSHOT-jar-with-dependencies.jar"]
