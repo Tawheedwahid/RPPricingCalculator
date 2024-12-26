@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y maven
 RUN mvn clean install
 
 # Copy the jar from the target directory into the container
-COPY target/your-app-name.jar /app/your-app-name.jar
+COPY target/RPPricingCalculator-1.0-SNAPSHOT-jar-with-dependencies.jar /app/RPPricingCalculator-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 # Expose the port that the Spring Boot app runs on (default: 8080)
 EXPOSE 8080
