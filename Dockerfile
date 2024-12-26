@@ -10,7 +10,7 @@ COPY src ./src
 
 # Build the app using Maven (adjust the command for Gradle if needed)
 RUN apt-get update && apt-get install -y maven
-RUN mvn clean package
+RUN mvn clean install
 
 # Copy the jar from the target directory into the container
 #COPY target/RPPricingCalculator-1.0-SNAPSHOT-jar-with-dependencies.jar /app/RPPricingCalculator-1.0-SNAPSHOT-jar-with-dependencies.jar
