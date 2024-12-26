@@ -46,6 +46,11 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.1.5</version>
+            </plugin>
             <!-- maven-assembly-plugin to package the project as a JAR with dependencies -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
